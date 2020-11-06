@@ -1,0 +1,201 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <title>
+       {% block title %} Home {% endblock %}
+    </title>
+  </head>
+  <body>
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+      <!-- kk -->
+      <!-- Top Header Area -->
+      <div class="top-header-area">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div
+                class="top-header-content d-flex align-items-center justify-content-between"
+              >
+                <!-- Logo -->
+                <div class="logo">
+                  <a href="index.html"
+                    ><img src="{% static 'img/core-img/logo.png' %}" alt=""
+                  /></a>
+                </div>
+
+                <!-- Login Search Area -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navbar Area -->
+      <div class="newspaper-main-menu" id="stickyMenu">
+        <div class="classy-nav-container breakpoint-off">
+          <div class="container">
+            <!-- Menu -->
+            <nav
+              class="classy-navbar justify-content-between"
+              id="newspaperNav"
+            >
+              <!-- Logo -->
+              <div class="logo">
+                <a href="{% url 'home' %}"
+                  ><img src="{% static 'img/core-img/logo.png' %}" alt=""
+                /></a>
+              </div>
+
+              <!-- Navbar Toggler -->
+              <div class="classy-navbar-toggler">
+                <span class="navbarToggler"
+                  ><span></span><span></span><span></span
+                ></span>
+              </div>
+
+              <!-- Menu -->
+              <div class="classy-menu">
+                <!-- close btn -->
+                <div class="classycloseIcon">
+                  <div class="cross-wrap">
+                    <span class="top"></span><span class="bottom"></span>
+                  </div>
+                </div>
+
+                <!-- Nav Start -->
+                <div class="classynav">
+                  <ul>
+                    <li class="active"><a href="{% url 'home' %}">Home</a></li>
+                    <li>
+                      <a href="#">Pages</a>
+                      <ul class="dropdown">
+                        <li><a href="">About Us</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="{% url 'breaking_news' %}">Breaking News</a></li>
+                    <li><a href="{% url 'lifeStyle' %}">Life Style</a></li>
+                    <li><a href="{% url 'technology' %}">Technology</a></li>
+                    <li><a href="{% url 'health' %}">Health</a></li>
+                    <li><a href="{% url 'news_deatil' %}">Entertainment</a></li>
+                    <li><a href="{% url 'sports' %}">Sports</a></li>
+                    <li><a href="{% url 'celebs' %}">Celebrities</a></li>
+                    <li><a href="{% url 'business' %}">Business</a></li>
+                  </ul>
+                </div>
+                <!-- Nav End -->
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+    {% block content %} {% endblock %}
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+      <!-- Main Footer Area -->
+      <div class="main-footer-area">
+        <div class="container">
+          <div class="row">
+            <!-- Footer Widget Area -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="footer-widget-area mt-80">
+                <!-- Footer Logo -->
+                <div class="footer-logo">
+                  <a href="{% url 'home' %} "
+                    ><img src="{% static 'img/core-img/logo.png' %}" alt=""
+                  /></a>
+                </div>
+                <!-- List -->
+                <ul class="list">
+                  <li>
+                    <a href="mailto:contact@youremail.com"
+                      >contact@youremail.com</a
+                    >
+                  </li>
+                  <li><a href="tel:+4352782883884">+43 5278 2883 884</a></li>
+                  <li>
+                    <a href="http://yoursitename.com">www.yoursitename.com</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Footer Widget Area -->
+
+            <!-- Footer Widget Area -->
+            <div class="col-12 col-sm-4 col-lg-2">
+              <div class="footer-widget-area mt-80">
+                <!-- Title -->
+                <h4 class="widget-title">Featured</h4>
+                <!-- List -->
+                <ul class="list">
+                 <li><a href="{% url 'breaking_news' %}">Breaking News</a></li>
+                    <li><a href="{% url 'lifeStyle' %}">Life Style</a></li>
+                    <li><a href="{% url 'technology' %}">Technology</a></li>
+                    <li><a href="{% url 'health' %}">Health</a></li>
+                    <li><a href="{% url 'news_deatil' %}">Entertainment</a></li>
+                    <li><a href="{% url 'sports' %}">Sports</a></li>
+                    <li><a href="{% url 'celebs' %}">Celebrities</a></li>
+                    <li><a href="{% url 'business' %}">Business</a></li>
+                </ul>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Footer Area -->
+      <div class="bottom-footer-area">
+        <div class="container h-100">
+          <div class="row h-100 align-items-center">
+            <div class="col-12">
+              <!-- Copywrite -->
+              <p>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                Copyright &copy;
+                <script>
+                  document.write(new Date().getFullYear());
+                </script>
+                All rights reserved | This template is made with
+                <i class="fa fa-heart-o" aria-hidden="true"></i> by
+                <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/bootstrap/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+    <!-- All Plugins js -->
+    <script src="{% static 'js/plugins/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'js/active.js' %}"></script>
+  </body>
+</html>
